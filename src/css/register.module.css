@@ -1,0 +1,60 @@
+.container{
+    min-width: 700px;
+    flex-direction: column;
+    height: fit-content;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px
+}
+
+.title{
+    font-weight: bold;
+    color: red;
+    font-size: 2rem;
+}
+
+.form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    /* align-items: center; */
+    gap: 20px
+}
+
+.inputfield{
+    display: flex;
+    gap: 20px
+}
+
+.input{
+    /* background-color: aqua; */
+    border: 2px black solid;
+    width: 100%;
+}
+
+.button{
+    width: 100px;
+    height: fit-content;
+    padding: 10px;
+    border: 2px black solid;
+    font-weight: 500;
+}
+
+.button:hover{
+    background: orangered;
+}
+
+.error{
+    background-color: red;
+    color: wheat;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.end{
+    display: flex;
+    gap: 10px;
+    justify-content: space-between;
+    align-items: center;
+}
