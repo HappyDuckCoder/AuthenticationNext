@@ -24,3 +24,8 @@
 .button:hover{
     background: orangered;
 }
+
+.dashboard{
+    display: flex;
+    gap: 20px
+}
