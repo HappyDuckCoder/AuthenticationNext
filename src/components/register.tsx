@@ -57,9 +57,9 @@ const Register = () => {
                 setName("");
                 setEmail("");
                 setPassword("");
-                const form = e.target as HTMLFormElement;
-                form.reset(); 
-                router.replace("/login");
+                // const form = e.target as HTMLFormElement;
+                // form.reset(); 
+                router.push("/login");
             } else {
                 console.log("Registration failed");
             }
