@@ -20,7 +20,7 @@ const Dashboard = () => {
             <button className={styles.button} onClick={() => signOut()}>Logout</button>
             <div className={styles.dashboard}>
                 <button className={styles.button} onClick={() => {router.push("/self_todo")}}>Your List</button>
-                {/* <button className={styles.button} onClick={handleTeam}>Team List</button> */}
+                {/* <button className={styles.button} onClick={() => {router.push("/your_team")}}>Team List</button> */}
             </div>
         </div>
     )

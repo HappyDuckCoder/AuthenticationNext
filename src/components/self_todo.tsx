@@ -3,6 +3,7 @@
 import { useSession } from "next-auth/react";
 import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
+import styles from "@/css/self_todo.module.css"
 
 interface Task {
     content: string;
@@ -150,50 +151,60 @@ const SelfTodo = () => {
     };
 
     return (
-        <div>
-            <h2>Tasks</h2>
-            <ul>
-                {tasks.map((task) => (
-                    <li key={task._id}>
-                        <div>
-                            {
-                                editingTaskId === task._id ? (
-                                    <div>
-                                        <input 
-                                            type="text"
-                                            value={editedName}
-                                            onChange={(e) => setEditedName(e.target.value)}
-                                        />
-                                        <button onClick={() => handleSave(task._id, editedName)}>save</button>
-                                    </div>
-                                ) : (
-                                    <div>
-                                        <p>{task.content}</p>
-                                        <button onClick={() => handleEdit(task._id, task.content)}>edit</button>
-                                    </div>
-                                )
-                            }
-                        </div>
-                        <button onClick={() => handleDelete(task._id)}>Delete</button>
-                        {
-                            task.completed ? (
-                                <button onClick={() => handleCompleted(task._id, task.completed)}>OKKK</button>
-                            ) : (
-                                <button onClick={() => handleCompleted(task._id, task.completed)}>HEHEHE</button>
-                            )
-                        }
-                    </li>
-                ))}
-            </ul>
-            <form onSubmit={handleAdd}>
+        <div className={styles.container}>
+            <h2 className={styles.title}>{session?.user?.name} 's List</h2>
+
+            <form className={styles.formAdd} onSubmit={handleAdd}>
                 <input
                     type="text"
                     placeholder="Task here"
                     value={content}
                     onChange={(e) => setContent(e.target.value)}
+                    className={styles.input}
                 />
-                <button type="submit">Add</button>
+                <button type="submit" className={styles.button}>Add</button>
             </form>
+
+            <ul className={styles.taskContainer}>
+                {tasks.map((task) => (
+                    <li className={styles.taskItem} key={task._id}>
+                        <div className={styles.tasks}>
+                            {
+                                editingTaskId === task._id ? (
+                                    <div className={styles.editting}>
+                                        <input 
+                                            type="text"
+                                            value={editedName}
+                                            onChange={(e) => setEditedName(e.target.value)}
+                                            className={styles.input}
+                                        />
+                                        <button className={styles.button} onClick={() => handleSave(task._id, editedName)}>save</button>
+                                    </div>
+                                ) : (
+                                    <div className={styles.contentContainer}>
+                                        <p>{task.content}</p>
+                                        <button
+                                            onClick={() => handleEdit(task._id, task.content)}
+                                            className={styles.button}
+                                        >
+                                                edit
+                                        </button>
+                                    </div>
+                                )
+                            }
+                        </div>
+                        <button className={styles.button} onClick={() => handleDelete(task._id)}>Delete</button>
+                        {
+                            task.completed ? (
+                                <button className={styles.button} onClick={() => handleCompleted(task._id, task.completed)}>OKKK</button>
+                            ) : (
+                                <button className={styles.button} onClick={() => handleCompleted(task._id, task.completed)}>HEHEHE</button>
+                            )
+                        }
+                    </li>
+                ))}
+            </ul>
+            
             <div>{session?.user?.id}</div>
         </div>
     );

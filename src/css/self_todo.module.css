@@ -1,0 +1,72 @@
+.container{
+    min-width: 700px;
+    flex-direction: column;
+    height: fit-content;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    border: 2px solid black;
+    padding: 20px
+}
+
+.title{
+    font-weight: bold;
+    color: red;
+    font-size: 2rem;
+}
+
+.formAdd{
+    display: flex;
+    gap: 20px;
+    border: 2px solid black;
+    padding: 10px
+}
+
+.input{
+    border: 2px solid black;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.button{
+    border: 2px solid black;
+    padding: 10px;
+}
+
+.taskContainer{
+    /* min-width: 700px; */
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    /* align-items: center; */
+    gap: 20px
+}
+
+.taskItem{
+    display: flex;
+    padding: 10px;
+    border: 2px black solid;
+    gap: 20px;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.contentContainer{
+    min-width: 250px;
+    display: flex;
+    gap: 10px;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.tasks{
+    display: flex;
+    justify-content: space-around;
+}
+
+.editting{
+    display: flex;
+    gap: 10px
+}
